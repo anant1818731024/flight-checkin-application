@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<title>Check In</title>
+</head>
+<body>
+	
+	
+<h2>Flight Details</h2>
+<div>
+	Airlines: <span th:text="${reservation.flight.operatingAirlines}"></span>
+</div>
+<div>
+	Flight Number: <span th:text="${reservation.flight.operatingAirlines}"></span>
+</div>
+<div>
+	Departure City: <span th:text="${reservation.flight.departureCity}"></span>
+</div>
+<div>
+	Arrival City: <span th:text="${reservation.flight.arrivalCity}"></span>
+</div>
+<div>
+	Date Of Departure: <span th:text="${reservation.flight.dateOfDeparture}"></span>
+</div>
+<div>
+	Estimated Departure Time: <span th:text="${reservation.flight.estimatedDepartureTime}"></span>
+</div>
+
+<h2>Passanger Details</h2>
+<div>
+	First Name: <span th:text="${reservation.passanger.firstName}"></span>
+</div>
+<div>
+	Last Name: <span th:text="${reservation.passanger.lastName}"></span>
+</div>
+<div>
+	Middle Name: <span th:text="${reservation.passanger.middleName}"></span>
+</div>
+<div>
+	Email: <span th:text="${reservation.passanger.email}"></span>
+</div>
+<div>
+	Phone: <span th:text="${reservation.passanger.phone}"></span>
+</div>
+
+
+<form action="processCheckin">
+	Enter Number of Bags: <input type = "text" name = "numberOfBags"/>
+	<input type="hidden" th:value="${reservation.id}" name = "reservationId"/>
+	<input type = "submit" value = "enter"/>
+</form>
+
+
+
+</body>
+</html>
